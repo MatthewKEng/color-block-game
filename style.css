@@ -1,0 +1,25 @@
+.box {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+#red {
+  background-color: deeppink;
+}
+
+#orange {
+  background-color: orange;
+}
+
+#yellow {
+  background-color: gold;
+}
+
+#green {
+  background-color: chartreuse;
+}
+
+#blue {
+  background-color: aqua;
+}
