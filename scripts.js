@@ -1,43 +1,61 @@
+var number = randomNumber(1,5);
 
-$(document).ready(function() {
 
+$(function() {
+  //listenClick();
+  randomNumber();
+  //listenClick();
+  console.log(number);
+  assignColor();
+  listenClick();
+});
 
 //this is the function that will generate which color should be clicked on//
 function randomNumber(min, max){
     return Math.floor(Math.random() * (1 + max - min) + min);
 }
 
-var number = randomNumber(1,5);
 
-console.log(number);
+function assignColor() {
+    if (number===1) {
+    $("span").text("RED");
+  }else if (number===2) {
+    $("span").text("ORANGE");
+  }else if (number===3) {
+    $("span").text("YELLOW");
+  }else if (number===4) {
+    $("span").text("GREEN");
+    }else {
+    $("span").text("BLUE");
 
-if (number=1) {
-$("p").append("RED");
-}else if (number=2) {
-$("p").append("ORANGE");
-}else if (number=3) {
-$("p").append("YELLOW");
-}else if (number=4) {
-$("p").append("GREEN");
-}else if (number=5) {
-$("p").append("BLUE");
+  }
 }
 
+function listenClick() {
+
+  $(".box").on('click', function() {
+    var clickedDiv = $(this);
+    //var clickedColor = clickedDiv.(id);
+  if ((clickedDiv === $('#red') && number != 1) || (clickedDiv === $('#orange') && nmumber != 2) || (clickedDiv === $('#yellow') && number != 3) || (clickedDiv === $('#green') && number != 4) || (clickedDiv === $('#blue') && number != 5)){
+  $("#answer").text("Wrong. No money for you...");
+  }else{
+  $("#answer").text("Congratulations! You've just won $50,000!!! No, not really. Sorry. But you do know your colors, so there's that to be proud of...");
+
+}
 });
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 //event handler for clicking on a div
-
-//$('div').click(function() {
-//if (chosen div = #red && number != 1) || (chosen div = #orange && nmumber != 2) || (chosen div = #yellow && number != 3) || (chosen div = green && number != 4) || (chosen div = blue && number != 5){
-// append tag with "Wrong. No money for you..."
-//}else{
-//append tag with "Congratulations! You've just won $50,000!!! (No, not really. Sorry. But you do know your colors, so there's that to be proud of...)"
-//}
-//}
-
-//}
-//}
-//}
-//}
